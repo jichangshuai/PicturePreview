@@ -10,7 +10,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.wjruiying.galleryviewer"
+//        applicationId "com.wjruiying.galleryviewer"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
