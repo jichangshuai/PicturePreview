@@ -15,5 +15,10 @@ allprojects {
   Step 2. Add the dependency
   
   dependencies {
-	        implementation 'com.github.jichangshuai:PicturePreview:0.1.2'
+	        implementation 'com.github.jichangshuai:PicturePreview:0.9.6-beta.1'
 	}
+	
+  Step 3. init and bind data source
+  
+  picturePreview = findViewById(R.id.picture_preview);
+  picturePreview.setDataSource(Arrays.asList(source));
