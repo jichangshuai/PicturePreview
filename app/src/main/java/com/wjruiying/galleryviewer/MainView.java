@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface MainView {
     void getPos(int position);
-    void setDataSource(List<Integer> dataSource);
+//    void setDataSource(List<Integer> dataSource);
 }

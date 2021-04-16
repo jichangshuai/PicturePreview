@@ -21,10 +21,10 @@ import java.util.List;
 public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.ViewHolder> {
 
     private Context context;
-    private List<Integer> data;
+    private List<String> data;
     private MainView mainView;
 
-    public GalleryListAdapter(Context context, List<Integer> data, MainView mainView) {
+    public GalleryListAdapter(Context context, List<String> data, MainView mainView) {
         this.context = context;
         this.data = data;
         this.mainView = mainView;
@@ -40,7 +40,7 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context)
-                .load(R.mipmap.ic_launcher)
+                .load(data.get(position))
                 .into(holder.item_image);
         holder.item_image.setOnClickListener(new View.OnClickListener() {
             @Override

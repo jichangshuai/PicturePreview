@@ -7,20 +7,8 @@
     tools:context=".MainActivity">
 
     <com.wjruiying.galleryviewer.PicturePreview
+        android:id="@+id/picture_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-<!--    <ImageView-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:id="@+id/preview_image"-->
-<!--        android:layout_width="128dp"-->
-<!--        android:layout_height="128dp"-->
-<!--        android:scaleType="fitXY"/>-->
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:id="@+id/scroll_view"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="128dp"/>-->
 
 </RelativeLayout>
