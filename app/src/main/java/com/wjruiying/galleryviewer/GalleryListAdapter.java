@@ -45,7 +45,7 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
         holder.item_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainView.getPos(position+1);
+                mainView.getPos(position);
             }
         });
     }
