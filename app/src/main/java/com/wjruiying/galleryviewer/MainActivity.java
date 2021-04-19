@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        picturePreview = findViewById(R.id.picture_preview);
-//        picturePreview.setDataSource(Arrays.asList(source));
+        picturePreview = findViewById(R.id.picture_preview);
+        picturePreview.setDataSource(Arrays.asList(source));
     }
 }

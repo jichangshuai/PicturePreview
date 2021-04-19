@@ -59,10 +59,6 @@ public class PicturePreview extends LinearLayout implements MainView {
         preview_image = view.findViewById(R.id.preview_image);
         scroll_view = view.findViewById(R.id.scroll_view);
         /**
-         * 数据源
-         */
-//        data = Arrays.asList(source);
-        /**
          * 管理器
          */
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
@@ -71,7 +67,6 @@ public class PicturePreview extends LinearLayout implements MainView {
          * 绑定列表管理器
          */
         scroll_view.setLayoutManager(linearLayoutManager);
-//        scroll_view.setAdapter(new GalleryListAdapter(context, data, this));
         scroll_view.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {

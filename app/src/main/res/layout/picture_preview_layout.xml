@@ -5,16 +5,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#f3f5f8">
 
         <ImageView
-            android:layout_centerInParent="true"
+            android:layout_above="@id/scroll_view"
+            android:layout_margin="40dp"
             android:id="@+id/preview_image"
-            android:layout_width="256dp"
-            android:layout_height="256dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="fitXY"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="40dp"
             android:layout_alignParentBottom="true"
             android:id="@+id/scroll_view"
             android:layout_width="match_parent"

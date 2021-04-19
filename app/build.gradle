@@ -1,5 +1,6 @@
 plugins {
-    id 'com.android.library'
+//    id 'com.android.library'
+    id 'com.android.application'
 }
 apply plugin: 'maven'
 apply plugin: 'com.github.dcendents.android-maven'
@@ -10,7 +11,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-//        applicationId "com.wjruiying.galleryviewer"
+        applicationId "com.wjruiying.galleryviewer"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 95
