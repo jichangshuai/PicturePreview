@@ -15,14 +15,26 @@ android {
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 96
-        versionName "1.0.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            keyAlias PICTURE_PREVIEW_RELEASE_KEY_ALIAS
+            keyPassword PICTURE_PREVIEW_RELEASE_KEY_PASSWORD
+            storeFile file(PICTURE_PREVIEW_RELEASE_STORE_PASSWORD)
+            storePassword PICTURE_PREVIEW_RELEASE_STORE_FILE
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
