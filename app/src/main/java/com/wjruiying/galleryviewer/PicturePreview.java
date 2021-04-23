@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -33,6 +34,12 @@ public class PicturePreview extends LinearLayout implements MainView {
     private RecyclerView scroll_view;
     private int currentPos = 0;
 
+    private FrameLayout preview_fl;
+    private ImageView preview_image_view;
+    private ImageView back_to_normal;
+    /**是否有预览功能**/
+    private boolean hasPreview = false;
+
     private GalleryListAdapter adapter;
 
     public PicturePreview(Context context) {
@@ -57,6 +64,15 @@ public class PicturePreview extends LinearLayout implements MainView {
                 .inflate(R.layout.picture_preview_layout, this, false);
         this.addView(view);
         preview_image = view.findViewById(R.id.preview_image);
+        preview_image.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(hasPreview){
+                    Glide.with(context).load(dataSource.getData().get(currentPos)).into(preview_image_view);
+                    preview_fl.setVisibility(VISIBLE);
+                }
+            }
+        });
         scroll_view = view.findViewById(R.id.scroll_view);
         /**
          * 管理器
@@ -96,10 +112,21 @@ public class PicturePreview extends LinearLayout implements MainView {
                 Log.e("TAG", "dx="+dx+",dy="+dy);
             }
         });
+
+        preview_fl = view.findViewById(R.id.preview_fl);
+        preview_fl.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                preview_fl.setVisibility(GONE);
+                adapter.notifyDataSetChanged();
+            }
+        });
+        preview_image_view = view.findViewById(R.id.preview_image_view);
     }
 
     @Override
     public void getPos(int position) {
+        currentPos = position;
         Glide.with(context).load(dataSource.getData().get(position)).into(preview_image);
     }
 
