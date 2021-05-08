@@ -127,7 +127,7 @@ public class PicturePreview extends LinearLayout implements MainView {
         preview_fl.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
                 preview_fl.setVisibility(GONE);
                 adapter.notifyDataSetChanged();
                 return true;
