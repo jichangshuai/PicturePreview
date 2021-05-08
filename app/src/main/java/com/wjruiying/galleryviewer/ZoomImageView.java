@@ -59,7 +59,7 @@ public class ZoomImageView extends ImageView implements ScaleGestureDetector.OnS
     private boolean isCheckTopAndBottom = true;
     private boolean isCheckLeftAndRight = true;
 
-    private MainView mainView;
+    private long currentTime = 0;
 
     public ZoomImageView(Context context) {
         this(context, null);
@@ -344,6 +344,7 @@ public class ZoomImageView extends ImageView implements ScaleGestureDetector.OnS
                 break;
 
             case MotionEvent.ACTION_UP:
+                currentTime = System.currentTimeMillis();
             case MotionEvent.ACTION_CANCEL:
                 Log.e(TAG, "ACTION_UP");
                 lastPointerCount = 0;

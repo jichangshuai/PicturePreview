@@ -4,10 +4,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,10 +38,10 @@ public class PicturePreview extends LinearLayout implements MainView {
     private int currentPos = 0;
 
     private FrameLayout preview_fl;
-    private ImageView preview_image_view;
-    private ImageView back_to_normal;
+    private ZoomImageView preview_image_view;
+    private ImageButton back_to_normal;
     /**是否有预览功能**/
-    private boolean hasPreview = false;
+    private boolean hasPreview = true;
 
     private GalleryListAdapter adapter;
 
@@ -114,14 +117,32 @@ public class PicturePreview extends LinearLayout implements MainView {
         });
 
         preview_fl = view.findViewById(R.id.preview_fl);
-        preview_fl.setOnClickListener(new OnClickListener() {
+//        preview_fl.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                preview_fl.setVisibility(GONE);
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+        preview_fl.setOnTouchListener(new OnTouchListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
                 preview_fl.setVisibility(GONE);
                 adapter.notifyDataSetChanged();
+                return true;
             }
         });
         preview_image_view = view.findViewById(R.id.preview_image_view);
+        back_to_normal = view.findViewById(R.id.back_to_normal);
+        back_to_normal.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                preview_fl.setVisibility(GONE);
+                adapter.notifyDataSetChanged();
+                return false;
+            }
+        });
     }
 
     @Override

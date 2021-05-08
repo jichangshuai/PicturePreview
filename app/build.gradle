@@ -11,11 +11,11 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-//        applicationId "com.wjruiying.galleryviewer"
-        minSdkVersion 26
+        applicationId "com.wjruiying.galleryviewer"
+        minSdkVersion 21
         targetSdkVersion 30
-        versionCode 96
-        versionName "1.0.1"
+        versionCode 106
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
