@@ -41,7 +41,7 @@ public class PicturePreview extends LinearLayout implements MainView {
     private ZoomImageView preview_image_view;
     private ImageButton back_to_normal;
     /**是否有预览功能**/
-    private boolean hasPreview = true;
+    private boolean hasPreview = false;
 
     private GalleryListAdapter adapter;
 
@@ -107,7 +107,7 @@ public class PicturePreview extends LinearLayout implements MainView {
                     int lastVisibleItem = manager.findLastCompletelyVisibleItemPosition();
                     int lastItemPosition = firstVisibleItem+(lastVisibleItem-firstVisibleItem)+1;
                     currentPos = firstVisibleItem;
-                    Log.e("TAG-scroll-firstVisibleItem", (firstVisibleItem)+"");
+//                    Log.e("TAG-scroll-firstVisibleItem", (firstVisibleItem)+"");
                 }
                 if(dx < 0){//从左向右滑
 
